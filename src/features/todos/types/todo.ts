@@ -6,7 +6,7 @@ export const todoSchema = z.object({
   title: z.string(),
   completed: z.boolean(),
 });
+export type Todo = z.infer<typeof todoSchema>;
 
 export const todoListResponseSchema = z.array(todoSchema);
-
 export type TodoList = z.infer<typeof todoListResponseSchema>;
