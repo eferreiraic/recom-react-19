@@ -1,6 +1,10 @@
-import TodosPage from '@/app/pages/todos-page/TodosPage';
+import TodosList from '@/features/todos/components/todos-list';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/todos/')({
-  component: TodosPage,
+  component: Todos,
 });
+
+function Todos() {
+  return <TodosList />;
+}

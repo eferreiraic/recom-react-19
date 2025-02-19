@@ -1,7 +1,6 @@
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
@@ -16,10 +15,6 @@ const menuOptions: { title: string; href: string }[] = [
     title: 'Todos',
     href: '/todos',
   },
-  {
-    title: 'About',
-    href: '/about',
-  },
 ];
 
 export default function Navbar() {
@@ -28,10 +23,8 @@ export default function Navbar() {
       <NavigationMenuList>
         {menuOptions.map((el) => (
           <NavigationMenuItem key={el.href}>
-            <Link to={el.href}>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                {el.title}
-              </NavigationMenuLink>
+            <Link to={el.href} className={navigationMenuTriggerStyle()}>
+              {el.title}
             </Link>
           </NavigationMenuItem>
         ))}

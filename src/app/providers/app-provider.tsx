@@ -1,7 +1,8 @@
 // Import the generated route tree
 import ReactQueryProvider from '@/app/providers/react-query-provider';
-import { routeTree } from './routeTree.gen';
+import { routeTree } from '../routeTree.gen';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
+import '@/lib/env';
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -13,12 +14,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-function App() {
+export default function AppProvider() {
   return (
     <ReactQueryProvider>
       <RouterProvider router={router} />
     </ReactQueryProvider>
   );
 }
-
-export default App;
